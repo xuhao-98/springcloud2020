@@ -10,6 +10,7 @@ eureka:
     service-url:
       #集群指向其它eureka
       defaultZone: http://eureka7001.com:7001/eureka/
+
       #单机就是自己
       #defaultZone: http://eureka7002.com:7002/eureka/
 
