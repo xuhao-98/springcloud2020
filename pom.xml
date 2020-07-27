@@ -13,6 +13,7 @@
         <module>cloud-api</module>
         <module>cloud-eureka-server7001</module>
         <module>cloud-eureka-server7002</module>
+        <module>payment8002</module>
     </modules>
     <packaging>pom</packaging>
 <!--版本控制-->
@@ -105,6 +106,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.2.7.RELEASE</version>
                 <configuration>
                     <fork>true</fork>
                     <addResources>true</addResources>

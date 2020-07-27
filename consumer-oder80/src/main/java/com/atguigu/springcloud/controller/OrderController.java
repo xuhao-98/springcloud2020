@@ -14,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 @AllArgsConstructor
 public class OrderController {
     private RestTemplate restTemplate;
-    public static final String PAYMENT_URL = "http://localhost:8001";
+    public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
     @GetMapping("/consumer/payment/create")
     public CommonResult<Payment> creat(Payment payment) {
         return restTemplate.postForObject(PAYMENT_URL+"/payment/create",payment,CommonResult.class);
