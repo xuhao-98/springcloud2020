@@ -28,3 +28,14 @@
  通过以下地址可以访问 Consul 首页
  http://localhost:8500
  
+ **Eureka、zookeeper、consul的区别**
+   组件名      语言      CAP     服务健康检查     对外接口暴露     SpringCloud集成
+   Eureka     java      Ap         可配支持         HTTP            已经集成
+   Consul      go       CP          支持          HTTP/DNS          已经集成
+   Zookeeper  java      CP          支持            HTTP            已经集成      
+   
+   CAP：
+   C：Consistency（强一致性） 
+   A: Availability(可用性)
+   P：Partition tolerance（分区容错性）
+   
