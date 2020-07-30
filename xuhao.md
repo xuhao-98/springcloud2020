@@ -94,3 +94,16 @@ BestAvailableRule
 AvailabilityFileringRule
 
 7.ZoneAvoidanceRule：默认规则，复合判断server所在区域的性能和server的可用性选择服务器。 
+
+
+
+**Feign、OpenFeign	服务接口调用**
+
+**Feign能干什么**：Feign在编写java http客户端变得更容易
+
+前面在使用Ribbon+RestTemplate时，利用RestTemplate对HTTp请求的封装处理，形成了一套模板化的调用方法。但是在实际开发中，由于对服务以来的调用可能不止一处，往往一个接口会被多处调用，所以通常都会针对每个微服务自行封装一些客户端类来包装这些依赖服务调用。所以Feign在此基础上做了进一步封装，由他来帮助我们定义和实现依赖服务接口的定义。在Feign的实现下，我们只需要创建一个接口并使用注解的方式来配置他，即可完成对服务提供方的接口绑定，简化了使用SpringCloud Ribbon时，自动封装服务调用客户端的开发量。
+
+Feign集成了Ribbon：利用Ribbon维护了Payment的服务列表信息，并且通过轮询实现了客户端的负载均衡。而与Ribbon不同的是，通过feign只需要定义服务绑定的接口并且以声明式的方法，优雅而简单的实现了服务调用。
+
+![image-20200730171537192](C:\Users\EDZ\AppData\Roaming\Typora\typora-user-images\image-20200730171537192.png)
+
