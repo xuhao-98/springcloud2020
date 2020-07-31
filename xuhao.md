@@ -107,3 +107,12 @@ Feign集成了Ribbon：利用Ribbon维护了Payment的服务列表信息，并�
 
 ![image-20200730171537192](C:\Users\EDZ\AppData\Roaming\Typora\typora-user-images\image-20200730171537192.png)
 
+**Feign的日志级别**
+
+NONE: 默认的，不显示任何日志
+
+BASIC: 记录请求方法、url、响应状态以及执行时间；
+
+HEADERS：除了BASIC中定义的信息之外，还有请求和相应的头信息；
+
+FULL：除了HEADERS中定义的信息之外，还有请求和相应的正文级元素。
