@@ -59,6 +59,11 @@ public class PaymentController {
         }
         return this.discoveryClient;
     }
+    @GetMapping(value = "/payment/lb")
+    public String getPaymentLB()
+    {
+        return serverport;
+    }
     @GetMapping(value = "/payment/feign/timeout")
     public String paymentFeignTimeout()
     {
