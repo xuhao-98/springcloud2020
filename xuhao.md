@@ -217,3 +217,50 @@ Hystrix的作用：服务降级、服务熔断、接近实时的的监控。。�
 ​	4.当开启的时候，所有请求都不会进行转发
 
 ​	5.一段时间之后（默认是5秒），这个时候断路器是半开状态，会让其中一个请求进行转发。如果成功，断路器会关闭，若失败，继续开启。重复4和5
+
+
+
+**服务网关--GetWay**
+
+​		GetWay是在Spring生态系统之上构建的API网关服务，基于Spring5，SpringBoot 2和Project Reactor等技术。GetWay在提供一种简单而有效的方式对API进行路由，以及提供一些强大的过滤功能，例如：熔断、限流、重试等。
+
+​		springcloud getway，使用的是WebFlux中的reactor-netty响应式编程组件，底层使用了Netty通讯框架
+
+
+
+**GetWayj的特性：**
+
+​	1、基于SpringFramework 5，Project Reactor 和Spring boot 2.0进行构建；
+
+​	2、动态路由：能够匹配任何请求属性；
+
+​	3、可以对路由指定Predicate（断言）和Filter（过滤器）；
+
+​	4、集成Hystrix的断路器功能；
+
+​	5、集成Spring Cloud服务发现功能；
+
+​	6、易于编写的Predicate和Filter；
+
+​	7、请求限流功能；
+
+​	8、支持路径重写。
+
+
+
+**GetWay三大核心概念**
+
+​	1.Route 路由：
+
+​	路由是构建网关的基本模块，由ID、目标URI、一系列的断言和过滤器组成，如果断言为true则匹配该路由；
+
+​	2.Predicate 断言：
+
+​	开发人员可以匹配HTTP请求中的所有内容（例如请求头和参数），如果请求与断言相匹配则进行该路由；
+
+​	3.Filter 过滤：
+
+​	指的是Spring框架中GetWayFilter的实例，使用过滤器，可以在请求被路由前或者之后对请求进行修改。
+
+
+
