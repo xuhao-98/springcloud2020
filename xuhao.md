@@ -220,15 +220,15 @@ Hystrix的作用：服务降级、服务熔断、接近实时的的监控。。�
 
 
 
-**服务网关--GetWay**
+**服务网关--GateWay**
 
-​		GetWay是在Spring生态系统之上构建的API网关服务，基于Spring5，SpringBoot 2和Project Reactor等技术。GetWay在提供一种简单而有效的方式对API进行路由，以及提供一些强大的过滤功能，例如：熔断、限流、重试等。
+​		GateWay是在Spring生态系统之上构建的API网关服务，基于Spring5，SpringBoot 2和Project Reactor等技术。GetWay在提供一种简单而有效的方式对API进行路由，以及提供一些强大的过滤功能，例如：熔断、限流、重试等。
 
-​		springcloud getway，使用的是WebFlux中的reactor-netty响应式编程组件，底层使用了Netty通讯框架
+​		springcloud GateWay，使用的是WebFlux中的reactor-netty响应式编程组件，底层使用了Netty通讯框架
 
 
 
-**GetWayj的特性：**
+**GateWay的特性：**
 
 ​	1、基于SpringFramework 5，Project Reactor 和Spring boot 2.0进行构建；
 
@@ -248,7 +248,7 @@ Hystrix的作用：服务降级、服务熔断、接近实时的的监控。。�
 
 
 
-**GetWay三大核心概念**
+**GateWay三大核心概念**
 
 ​	1.Route 路由：
 
@@ -260,11 +260,22 @@ Hystrix的作用：服务降级、服务熔断、接近实时的的监控。。�
 
 ​	3.Filter 过滤：
 
-​	指的是Spring框架中GetWayFilter的实例，使用过滤器，可以在请求被路由前或者之后对请求进行修改。
+​	指的是Spring框架中GateWayFilter的实例，使用过滤器，可以在请求被路由前或者之后对请求进行修改。
 
 **网关路由的两种配置方式**
 
 ​	1.在配置文件yml中配置；
 
-​	2.代码中注入RouteLocator的Bean；
+​	2.代码中注入RouteLocator的Bean
+
+```java
+@Bean
+public RouteLocator customRouteLocator(RouteLocatorBuilder routeLocatorBuilder) {
+    RouteLocatorBuilder.Builder routes = routeLocatorBuilder.routes();
+    routes.route("path_route_atguigu",
+            r -> r.path("/guonei")
+                    .uri("http://news.baidu.com/guonei")).build();
+    return routes.build();
+}
+```
 

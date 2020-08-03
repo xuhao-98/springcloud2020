@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class GetWayConfig {
+public class GateWayConfig {
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder routeLocatorBuilder) {
         RouteLocatorBuilder.Builder routes = routeLocatorBuilder.routes();
