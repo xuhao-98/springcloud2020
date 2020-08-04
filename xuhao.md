@@ -328,3 +328,21 @@ public class GateWayFilter implements GlobalFilter, Ordered {
     }
 }
 ```
+
+**服务配置Config**
+
+**什么是SpringCloud Config？**
+
+​		SpringCloudConfig为微服务架构中的微服务提供集中化的外部配置支持，配置服务器为各个不同微服务应用的所有环境提供了一个中心化的外部配置。
+
+**SpringCloud Config能做些什么**
+
+​		1、集中管理配置文件；
+
+​		2、不同环境不同配置，动态化的配置更新，分环境部署，比如：dev/test/beta等；
+
+​		3、运行期间动态调整配置，不再需要在每个服务部署的机器上编写配置文件，服务向配置中心统一拉取配置自己的信息；
+
+​		4、当配置发生变动时，服务不再需要重启即可感知配置的变化并且应用新的配置；
+
+​		5、将配置信息以REST接口的形式暴露。
