@@ -398,3 +398,33 @@ public class GateWayFilter implements GlobalFilter, Ordered {
 - **Alibaba Cloud OSS**: 阿里云对象存储服务（Object Storage Service，简称 OSS），是阿里云提供的海量、安全、低成本、高可靠的云存储服务。您可以在任何应用、任何时间、任何地点存储和访问任意类型的数据。
 - **Alibaba Cloud SchedulerX**: 阿里中间件团队开发的一款分布式任务调度产品，提供秒级、精准、高可靠、高可用的定时（基于 Cron 表达式）任务调度服务。
 
+**NACOS**
+
+Nacos = Eureka+Config+Bus
+
+#### 下载并安装
+
+```html
+# 下载源码
+git clone https://github.com/alibaba/nacos.git
+
+# 安装到本地仓库
+cd nacos/
+mvn -Prelease-nacos clean install -U
+```
+
+### 启动服务
+
+```html
+cd distribution/target/nacos-server-0.7.0/nacos/bin
+
+# Linux
+./startup.sh -m standalone
+
+# Windows
+startup.cmd
+```
+
+### 访问服务
+
+打开浏览器访问：http://127.0.0.1:8848/nacos
