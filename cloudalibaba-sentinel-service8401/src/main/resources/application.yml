@@ -21,12 +21,12 @@ spring:
             data-type: json
             rule-type: flow
 
-#management:
-#  endpoints:
-#    web:
-#      exposure:
-#        include: '*'
-#
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
 #feign:
 #  sentinel:
 #    enabled: true # 激活Sentinel对Feign的支持
