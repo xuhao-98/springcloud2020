@@ -535,9 +535,11 @@ QPS>=5且异常比例超过阈值,触发降级;时间窗口结束后,关机降�
 
 @SentinelResource
 
+```java
+@SentinelResource(value = "testHotKey",blockHandler = "deal_testHotKey")
+```
 
-
-
+deal_testHotKey 为备用方法
 
 
 
