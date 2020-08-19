@@ -35,6 +35,7 @@
         <module>cloudalibaba-provider-payment9004</module>
     </modules>
     <packaging>pom</packaging>
+
 <!--版本控制-->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
