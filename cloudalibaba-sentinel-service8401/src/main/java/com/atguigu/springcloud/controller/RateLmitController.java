@@ -37,7 +37,7 @@ public class RateLmitController {
     @GetMapping("/byResource/blockHandler")
     @SentinelResource(value = "blockHandler",
             blockHandlerClass = CustomerBlockHandler.class,
-            blockHandler = "handlerException2")
+            blockHandler = "handlerException")
     public CommonResult blockHandler()
     {
         return new CommonResult(200,"按自定义测试成功",new Payment(2020L,"serial003"));
