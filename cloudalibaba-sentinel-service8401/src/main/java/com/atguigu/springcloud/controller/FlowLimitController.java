@@ -1,7 +1,8 @@
 package com.atguigu.springcloud.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
-import com.sun.deploy.security.BlockedException;
+import com.alibaba.csp.sentinel.slots.block.BlockException;
+
 import lombok.extern.log4j.Log4j;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -50,13 +51,16 @@ public class FlowLimitController {
         int age = 10 / 0;
         return "------testE";
     }
+
     @GetMapping("/testHotKey")
-    @SentinelResource(value = "testHotKey",blockHandler = "deal_testHotKey")
-    public String testHotKey(@RequestParam(value = "p1",required = false)String p1,
-                             @RequestParam(value = "p2",required = false)String p2){
+    @SentinelResource(value = "testHotKey", blockHandler = "deal_testHotKey")
+    public String testHotKey(@RequestParam(value = "p1", required = false) String p1,
+                             @RequestParam(value = "p2", required = false) String p2) {
         return "------testHotKey";
     }
-    public String deal_testHotKey(String p1, String p2, BlockedException exception){
-        return "------deal_testHotKey,o(╥﹏╥)o";
+
+    public String deal_testHotKey (String p1, String p2, BlockException exception)
+    {
+        return "------deal_testHotKey,o(╥﹏╥)o";  //sentinel系统默认的提示：Blocked by Sentinel (flow limiting)
     }
 }
