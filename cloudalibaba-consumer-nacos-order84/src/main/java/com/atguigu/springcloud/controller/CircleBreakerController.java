@@ -41,7 +41,6 @@ public class CircleBreakerController {
         } else if (result.getData() == null) {
             throw new NullPointerException("NullPointerException,该ID没有对应记录,空指针异常");
         }
-
         return result;
     }
 
