@@ -721,3 +721,67 @@ public class CircleBreakerController {
 
 }
 ```
+
+
+
+### Sentinel持久化规则
+
+​	将限流配置规则持久化进Nacos保存,只要刷新8401某个rest地址,sentinel控制台的流控规则就能看到,只要Nacos里面的布置不删除,针对8401上Sentinel的流控规则持续有效.
+
+依赖:
+
+```java
+<!--SpringCloud ailibaba sentinel-datasource-nacos 后续做持久化用到-->
+<dependency>
+    <groupId>com.alibaba.csp</groupId>
+    <artifactId>sentinel-datasource-nacos</artifactId>
+</dependency>
+```
+
+Yml配置:
+
+```yaml
+spring:
+  application:
+    name: cloudalibaba-sentinel-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #Nacos服务注册中心地址
+    sentinel:
+      transport:
+        dashboard: localhost:8080 #配置Sentinel dashboard地址
+        port: 8719
+      datasource:
+        ds1:
+          nacos:
+            server-addr: localhost:8848
+            dataId: cloudalibaba-sentinel-service
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
+```
+
+Nacos配置:
+
+[
+
+​    {
+
+​        "resource": "/rateLimit/byUrl",
+
+​        "limitApp": "default",
+
+​        "grade": 1,
+
+​        "count": 1,
+
+​        "strategy": 0,
+
+​        "controlBehavior": 0,
+
+​        "clusterMode": false
+
+​    }
+
+]
